@@ -1,0 +1,54 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "D:/All Coding/RM-Raceing-Code/Ansihinin RM Infantry/Library/STM32F4xx_StdPeriph_Driver/inc",
+                "D:/All Coding/RM-Raceing-Code/Ansihinin RM Infantry/Library/CMSIS/Device/ST/STM32F4xx/Include",
+                "D:/All Coding/RM-Raceing-Code/Ansihinin RM Infantry/Library/CMSIS/Include",
+                "D:/All Coding/RM-Raceing-Code/Ansihinin RM Infantry/User",
+                "D:/All Coding/RM-Raceing-Code/Ansihinin RM Infantry/Devices",
+                "D:/All Coding/RM-Raceing-Code/Ansihinin RM Infantry/BSP",
+                "D:/All Coding/RM-Raceing-Code/Ansihinin RM Infantry/Apps",
+                "D:/All Coding/RM-Raceing-Code/Ansihinin RM Infantry/Devices/MPU",
+                "D:/All Coding/RM-Raceing-Code/Ansihinin RM Infantry/Task",
+                "D:/All Coding/RM-Raceing-Code/Ansihinin RM Infantry/Devices/MPU/DMP/driver/eMPL",
+                "D:/All Coding/RM-Raceing-Code/Ansihinin RM Infantry/Devices/MPU/DMP/driver/include",
+                "D:/All Coding/RM-Raceing-Code/Ansihinin RM Infantry/Devices/MPU/DMP/driver/stm32L",
+                "D:/All Coding/RM-Raceing-Code/Ansihinin RM Infantry/Devices/MPU/DMP/mllite",
+                "D:/All Coding/RM-Raceing-Code/Ansihinin RM Infantry/Devices/MPU/DMP/mpl",
+                "D:/All Coding/RM-Raceing-Code/Ansihinin RM Infantry/Devices/MPU/DMP/eMPL-hal",
+                "D:/All Coding/RM-Raceing-Code/Ansihinin RM Infantry/Devices/IMU",
+                "D:/All Coding/RM-Raceing-Code/Ansihinin RM Infantry/FreeRTOS/include",
+                "D:/All Coding/RM-Raceing-Code/Ansihinin RM Infantry/FreeRTOS/portable/RVDS/ARM_CM4F",
+                "D:/All Coding/RM-Raceing-Code/Ansihinin RM Infantry/FreeRTOS",
+                "C:/Keil_v5/ARM/Pack/MDK-Packs/Azure_IoT/1.0.0/c-utility/inc/azure_c_shared_utility",
+                "C:/Program Files (x86)/Microsoft Visual Studio/Include",
+                "C:/Keil_v5/ARM/Pack/MDK-Packs/Azure_IoT/1.0.0/c-utility/adapters",
+                "C:/Keil_v5/ARM/Pack/MDK-Packs/Azure_IoT/1.0.0/c-utility/pal/inc",
+                "C:/Keil_v5/Backup.003/ARM/ARMCC/include",
+                "",
+                "${workspaceFolder}/Libraries/CMSIS/Device/ST/STM32F4xx/Include",
+                "${workspaceFolder}/Libraries/CMSIS/Include",
+                "${workspaceFolder}/Libraries/STM32F4xx_StdPeriph_Driver/inc",
+                "${workspaceFolder}/Task",
+                "",
+                "${workspaceFolder}/BSP",
+                "${workspaceFolder}/Devices"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "USE_STDPERIPH_DRIVER",
+                "STM32F427_437xx",
+                "__CC_ARM"
+            ],
+            "compilerPath": "C:\\Program Files\\LLVM\\bin\\clang.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "msvc-x64"
+        }
+    ],
+    "version": 4
+}
