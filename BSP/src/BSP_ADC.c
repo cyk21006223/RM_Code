@@ -10,7 +10,7 @@ void  Adc_Init(void)
 	ADC_CommonInitTypeDef ADC_CommonInitStructure;
 	ADC_InitTypeDef       ADC_InitStructure;
 	
-  RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE); //使能ADC1时钟
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE); //使能ADC1的时钟
 
   //先初始化ADC1通道 IO口
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AN;//模拟输入
