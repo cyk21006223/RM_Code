@@ -30,6 +30,7 @@
 #include "DR16.h"
 #include "IMU.h"
 #include "Current_Setting.h"
+#include "Aiming_Control.h"
 #include "Analysis.h"
 #include "Filter.h"
 #include "PID.h"
@@ -85,14 +86,6 @@ typedef struct
 	positionpid_t YAW_Speed_pid;
 	positionpid_t Roll_Attitude_pid;
 	positionpid_t Roll_Speed_pid;
-
-  /*Ä£ºýPID*/
-  POSfuzzationpid_t YAW_PID_ATT;
-  POSfuzzationpid_t YAW_PID_SPEE;
-  POSfuzzationpid_t Roll_PID_ATT;
-  POSfuzzationpid_t Roll_PID_SPEE;
-
-
 
 }Cloud_t;
 

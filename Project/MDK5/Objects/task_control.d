@@ -64,6 +64,7 @@
 .\objects\task_control.o: ..\..\BSP\BSP_NVIC.h
 .\objects\task_control.o: ..\..\Devices\Current_Setting.h
 .\objects\task_control.o: ..\..\BSP\BSP_CAN.h
+.\objects\task_control.o: ..\..\Devices\Aiming_Control.h
 .\objects\task_control.o: ..\..\Apps\Filter.h
 .\objects\task_control.o: ..\..\BSP\BSP_KEY.h
 .\objects\task_control.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h

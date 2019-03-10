@@ -24,7 +24,7 @@
   |-----------------------------declaration of end-----------------------------|
  **/
 #include "Task_Control.h" 
-    
+//    vTaskList添加方便调试
 /*-----------------------------------file of end------------------------------*/
 
 /* =========================== DeviceFlash of begin =========================== */
@@ -62,6 +62,8 @@ void Cloud_Task(void *pvParameters);
 
 
 
+
+
 /**
   * @Data    2019-02-20 19:46
   * @brief   控制任务创建
@@ -70,6 +72,7 @@ void Cloud_Task(void *pvParameters);
   */
 void Control_TaskCreate(void)
 {
+    /*帧率刷新任务*/
     xTaskCreate(Devices_Task,           /* 任务函数  */        
 				        "Devices_Task",         /* 任务名    */      
 				        128,       			      /* 任务栈大小*/  
@@ -77,27 +80,31 @@ void Control_TaskCreate(void)
 				        2,       			        /* 任务优先级*/
 				        &Device_FlashHandler);   /* 任务句柄  */
 
-    xTaskCreate(LED_LightTask,           /* 任务函数  */        
+    /*流水灯检测任务*/
+		xTaskCreate(LED_LightTask,           /* 任务函数  */        
 								"LED_LightTask",         /* 任务名    */      
 								128,       			      /* 任务栈大小*/  
 								NULL,                 /* 任务参数  */    
 								2,       			        /* 任务优先级*/
 								&LED_LightHandler);   /* 任务句柄  */
 
-    xTaskCreate(Chassical_Task,           /* 任务函数  */        
-								"Chassical_Task",         /* 任务名    */      
-								128,       			      /* 任务栈大小*/  
-								NULL,                 /* 任务参数  */    
-								2,       			        /* 任务优先级*/
-								&Chassical_Handler);   /* 任务句柄  */
+    /*底盘数据控制任务*/
+//    xTaskCreate(Chassical_Task,           /* 任务函数  */        
+//		 						"Chassical_Task",         /* 任务名    */      
+//		 						128,       			      /* 任务栈大小*/  
+//		 						NULL,                 /* 任务参数  */    
+//		 						2,       			        /* 任务优先级*/
+//		 						&Chassical_Handler);   /* 任务句柄  */
 
+    /*云台数据控制任务*/
     xTaskCreate(Cloud_Task,           /* 任务函数  */        
 								"Cloud_Task",         /* 任务名    */      
-								128,       			      /* 任务栈大小*/  
+								512,       			      /* 任务栈大小*/  
 								NULL,                 /* 任务参数  */    
 								2,       			        /* 任务优先级*/
 								&Cloud_Handler);   /* 任务句柄  */
 
+    /*检测机控制任务*/
     
 }
 
@@ -202,3 +209,5 @@ void Cloud_Task(void *pvParameters)
     vTaskDelayUntil(&CurrentControlTick,10 / portTICK_RATE_MS);
   }
 }
+
+

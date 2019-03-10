@@ -70,3 +70,4 @@
 .\objects\imu.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\imu.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 .\objects\imu.o: ..\..\Devices\IMU.h
+.\objects\imu.o: ..\..\Devices\Aiming_Control.h

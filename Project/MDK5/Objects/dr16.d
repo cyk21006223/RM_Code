@@ -59,10 +59,11 @@
 .\objects\dr16.o: ..\..\FreeRTOS\include\task.h
 .\objects\dr16.o: ..\..\FreeRTOS\include\list.h
 .\objects\dr16.o: ..\..\FreeRTOS\include\queue.h
+.\objects\dr16.o: ..\..\Devices\Aiming_Control.h
+.\objects\dr16.o: ..\..\Apps\Filter.h
 .\objects\dr16.o: ..\..\Apps\Analysis.h
 .\objects\dr16.o: ..\..\Apps\PID.h
 .\objects\dr16.o: ..\..\BSP\BSP_MATH.h
-.\objects\dr16.o: ..\..\Apps\Filter.h
 .\objects\dr16.o: ..\..\BSP\BSP_KEY.h
 .\objects\dr16.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 .\objects\dr16.o: ..\..\Libraries\CMSIS\Include\arm_math.h

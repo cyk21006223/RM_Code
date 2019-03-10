@@ -60,14 +60,14 @@
 .\objects\task_usart.o: ..\..\BSP\BSP_NVIC.h
 .\objects\task_usart.o: ..\..\Devices\Current_Setting.h
 .\objects\task_usart.o: ..\..\BSP\BSP_CAN.h
+.\objects\task_usart.o: ..\..\Devices\Aiming_Control.h
+.\objects\task_usart.o: ..\..\Apps\Filter.h
 .\objects\task_usart.o: ..\..\Apps\Analysis.h
 .\objects\task_usart.o: ..\..\Apps\PID.h
 .\objects\task_usart.o: ..\..\BSP\BSP_MATH.h
-.\objects\task_usart.o: ..\..\Apps\Filter.h
 .\objects\task_usart.o: ..\..\BSP\BSP_KEY.h
 .\objects\task_usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 .\objects\task_usart.o: ..\..\Libraries\CMSIS\Include\arm_math.h
 .\objects\task_usart.o: ..\..\Libraries\CMSIS\Include\core_cm4.h
 .\objects\task_usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\task_usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
-.\objects\task_usart.o: ..\..\Devices\Aiming_Control.h

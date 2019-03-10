@@ -131,7 +131,7 @@ void USART2_ReceiveTask(void *pvParameters)
     {
       if(sscanf(usart2RxBuffer, "S%d,%d",&Aiming_x,&Aiming_y) == 2)
       {
-        Aiming_Process(Aiming_x,Aiming_y);
+        Aiming_Process(Aiming_x,Aiming_y,&ControlVision);
         GPIO_ToggleBits(GPIOE,GPIO_Pin_12);
       }
       else if(sscanf(usart2RxBuffer, "N%d",&N_state) == 1)

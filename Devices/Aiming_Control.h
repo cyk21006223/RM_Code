@@ -29,14 +29,30 @@
 #include "Filter.h"
 #include "stm32f4xx.h"
 #include "BSP_USART.h"
+
+
+/*视觉瞄准结构体*/
+typedef struct
+{
+  int Input_x;
+  int Input_y;
+	int LPF_x;
+	int LPF_y;
+  int Output_x;
+  int Output_y;
+}CV_t;
+
 /*自瞄数据储存体*/
 extern uint8_t CV_RXBUFF[8];
+
+/*自瞄数据储存结构体*/
+extern CV_t ControlVision;
 
 /*自瞄初始化*/
 void Aiming_Init(void);
 
-/*自瞄模式判断*/
-void Aiming_Process(int Input_x,int Input_y);
+/*自瞄数据判断*/
+void Aiming_Process(int Input_x,int Input_y,CV_t* CV);
 
 #endif	// __AIMING_CONTROL_H
 /*-----------------------------------file of end------------------------------*/

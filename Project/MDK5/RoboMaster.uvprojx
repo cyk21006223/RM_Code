@@ -448,6 +448,11 @@
               <FilePath>..\..\Devices\Device_Flash.c</FilePath>
             </File>
             <File>
+              <FileName>Cloud_Control.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Devices\Cloud_Control.c</FilePath>
+            </File>
+            <File>
               <FileName>Aiming_Control.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Devices\Aiming_Control.c</FilePath>
@@ -456,11 +461,6 @@
               <FileName>Chassis_Control.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Devices\Chassis_Control.c</FilePath>
-            </File>
-            <File>
-              <FileName>Cloud_Control.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\Devices\Cloud_Control.c</FilePath>
             </File>
             <File>
               <FileName>Current_Setting.c</FileName>
@@ -1256,6 +1256,11 @@
               <FilePath>..\..\Devices\Device_Flash.c</FilePath>
             </File>
             <File>
+              <FileName>Cloud_Control.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Devices\Cloud_Control.c</FilePath>
+            </File>
+            <File>
               <FileName>Aiming_Control.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Devices\Aiming_Control.c</FilePath>
@@ -1264,11 +1269,6 @@
               <FileName>Chassis_Control.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Devices\Chassis_Control.c</FilePath>
-            </File>
-            <File>
-              <FileName>Cloud_Control.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\Devices\Cloud_Control.c</FilePath>
             </File>
             <File>
               <FileName>Current_Setting.c</FileName>

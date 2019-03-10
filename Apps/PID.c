@@ -75,47 +75,41 @@ uint32_t MaxOutput, uint32_t IntegralLimit)
     pid->Kp = kp;
     pid->Ki = ki;
     pid->Kd = kd;
+    pid->ec_error = 0;
     pid->MaxOutput = MaxOutput;
     pid->IntegralLimit = IntegralLimit;
     pid->PWM = 0;
 }
 
 /**
-  * @Data    2019-02-19 16:06
-  * @brief   模糊位置式PID初始化
-  * @param   fuzzationpid_t *pid,
-  *          float kp,
-  *          float ki,
-  *          float kd,
-  *          uint32_t MaxOutput,
-  *          uint32_t IntegralLimit
+  * @Data    2019-03-07 18:29
+  * @brief   位置模糊PID初始化
+  * @param   positionpid_t *pid, float InputKpRule[4],float InputKiRule[4],\
+  * float InputKdRule[4],uint32_t MaxOutput, uint32_t IntegralLimit
   * @retval  void
   */
-void POSFuzzationPID_Init(POSfuzzationpid_t *pid,float InputKpRule[4],\
-float InputKiRule[4],float InputKdRule[4],uint32_t MaxOutput, \
-int32_t IntegralLimit)
+void FuzzyPID_POSInit(positionpid_t *pid, float InputKpRule[4],float InputKiRule[4],\
+float InputKdRule[4],uint32_t MaxOutput, uint32_t IntegralLimit)
 {
     pid->Target = 0;
     pid->Measured = 0;
     pid->error = 0;
     pid->last_error = 0;
-    pid->Add_error = 0;
-    pid->ec_error = 0;
-
-     for(int a=0;a<4;a++)
-    {
-        pid->KpRule[a] = InputKpRule[a];
-        pid->KiRule[a] = InputKiRule[a];
-        pid->KpRule[a] = InputKpRule[a];
-    }
-
     pid->Kp = 0;
     pid->Ki = 0;
     pid->Kd = 0;
+    for(int a = 0; a < 4; a++)
+    {
+        pid->KpRule[a] = InputKpRule[a];
+        pid->KiRule[a] = InputKiRule[a];
+        pid->KdRule[a] = InputKdRule[a];
+    }
+    pid->ec_error = 0;
     pid->MaxOutput = MaxOutput;
     pid->IntegralLimit = IntegralLimit;
     pid->PWM = 0;
 }
+
 
 /**
   * @Data    2019-02-19 15:46
@@ -213,16 +207,13 @@ int PositionPID_Calculation(positionpid_t *pid, float target, float measured)
     return pid->PWM;
 }
 
-
-
-
 /**
-  * @Data    2019-02-19 16:23
-  * @brief   模糊位置式PID计算公式
-  * @param   fuzzationpid_t * pid, float target, float measured
-  * @retval  int
+  * @Data    2019-03-07 17:07
+  * @brief   测试的位置模糊PID计算
+  * @param   positionpid_t *pid,float target, float measured
+  * @retval  void
   */
-int FuzzationPID_POSCalculation(POSfuzzationpid_t * pid, float target, float measured)
+int FuzzyPID_PosCalculation(positionpid_t *pid,float target, float measured)
 {
     float kp_output,ki_output,kd_output;
 
@@ -233,7 +224,7 @@ int FuzzationPID_POSCalculation(POSfuzzationpid_t * pid, float target, float mea
     /*模糊推导*/
     pid->Kp = fuzzy_kp(pid->error,pid->ec_error,pid->KpRule);
     pid->Ki = fuzzy_ki(pid->error,pid->ec_error,pid->KiRule);
-    pid->Kd = fuzzy_kd(pid->error,pid->ec_error,pid->KpRule);
+    pid->Kd = fuzzy_kd(pid->error,pid->ec_error,pid->KdRule);
 
     if(abs(pid->error) < 20)
 	{
@@ -263,6 +254,8 @@ int FuzzationPID_POSCalculation(POSfuzzationpid_t * pid, float target, float mea
 }
 
 
+
+
 /* =========================== FUZZYCAL of begin =========================== */
 /**
   * @Data    2019-02-19 16:31
@@ -270,8 +263,8 @@ int FuzzationPID_POSCalculation(POSfuzzationpid_t * pid, float target, float mea
   * @param   float e, float ec
   * @retval  float
   */
-float fuzzy_kp(float e, float ec,float InputKpRule[4])
-{
+float fuzzy_kp(float e, float ec, float InputKpRule[4])
+{ 
     /*定义Kp的计算值*/
     float Kp_calcu;
 
@@ -285,7 +278,7 @@ float fuzzy_kp(float e, float ec,float InputKpRule[4])
     float ecRule[7]={-7.0,-5.0,-3.0,0.0,3.0,5.0,7.0};
 
     /*Kp 的模糊子集*/
-    float kpRule[4]={InputKpRule[0],InputKpRule[1],InputKpRule[2],InputKpRule[3]};
+    float kpRule[4]={InputKpRule[0],InputKpRule[1],InputKpRule[2],InputKpRule[3]}; 
 
     float eFuzzy[2]={0.0,0.0};//隶属于误差 E 的隶属程度
     float ecFuzzy[2]={0.0,0.0}; //隶属于误差变化率 EC 的隶属程度
@@ -402,8 +395,8 @@ float fuzzy_kp(float e, float ec,float InputKpRule[4])
   * @param   float e, float ec
   * @retval  float
   */
-float fuzzy_ki(float e, float ec, float InputKiRule[4])
-{
+float fuzzy_ki(float e, float ec, float InputKiRule[4]) 
+{ 
     float Ki_calcu; 
     unsigned char num,pe,pec; 
 
@@ -508,7 +501,7 @@ float fuzzy_ki(float e, float ec, float InputKiRule[4])
         /******** 加 权 平 均 法 解 模 糊 ********/ 
         Ki_calcu=KiFuzzy[0]*kiRule[0]+KiFuzzy[1]*kiRule[1]+KiFuzzy[2]*kiRule[2] +KiFuzzy[3]*kiRule[3]; 
         return(Ki_calcu); 
-}
+} 
 
 
 /**
@@ -517,8 +510,8 @@ float fuzzy_ki(float e, float ec, float InputKiRule[4])
   * @param   float e, float ec
   * @retval  float
   */
-float fuzzy_kd(float e, float ec,float InputKdRule[4])
-{
+float fuzzy_kd(float e, float ec, float InputKdRule[4]) 
+{ 
     float Kd_calcu; 
     unsigned char num,pe,pec; 
     float eRule[7]={-80.0,-40.0,-20.0,0.0,20.0,40.0,80.0};
@@ -622,6 +615,6 @@ float fuzzy_kd(float e, float ec,float InputKdRule[4])
     /******** 加权平均法解模糊 ********/ 
     Kd_calcu=KdFuzzy[0]*kdRule[0]+KdFuzzy[1]*kdRule[1]+KdFuzzy[2]*kdRule[2] +KdFuzzy[3]*kdRule[3]; 
     return(Kd_calcu); 
-}
+} 
 /* =========================== FUZZYCAL of end =========================== */
 

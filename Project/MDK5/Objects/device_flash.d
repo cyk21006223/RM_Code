@@ -63,6 +63,7 @@
 .\objects\device_flash.o: ..\..\FreeRTOS\include\task.h
 .\objects\device_flash.o: ..\..\FreeRTOS\include\list.h
 .\objects\device_flash.o: ..\..\FreeRTOS\include\queue.h
+.\objects\device_flash.o: ..\..\Devices\Aiming_Control.h
 .\objects\device_flash.o: ..\..\Apps\Filter.h
 .\objects\device_flash.o: ..\..\BSP\BSP_KEY.h
 .\objects\device_flash.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h

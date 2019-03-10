@@ -66,6 +66,7 @@
 .\objects\chassis_control.o: ..\..\FreeRTOS\include\task.h
 .\objects\chassis_control.o: ..\..\FreeRTOS\include\list.h
 .\objects\chassis_control.o: ..\..\FreeRTOS\include\queue.h
+.\objects\chassis_control.o: ..\..\Devices\Aiming_Control.h
+.\objects\chassis_control.o: ..\..\Apps\Filter.h
 .\objects\chassis_control.o: ..\..\Apps\Analysis.h
 .\objects\chassis_control.o: ..\..\Apps\PID.h
-.\objects\chassis_control.o: ..\..\Apps\Filter.h

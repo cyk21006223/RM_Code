@@ -27,6 +27,9 @@
 
 /*自瞄数据储存数组*/
 uint8_t CV_RXBUFF[8];
+
+/*自瞄数据储存结构体*/
+CV_t ControlVision;
 /*-----------------------------------file of end------------------------------*/
 
 /**
@@ -50,16 +53,20 @@ void Aiming_Init(void)
   */
  /*方便查看外移*/
 
-void Aiming_Process(int Input_x,int Input_y)
+void Aiming_Process(int Input_x,int Input_y,CV_t* CV)
 {
-  /*正常输出之后的X轴和Y轴数据*/
-	int Output_x = 0,Output_y = 0;
 	/*滤波之后的X轴和Y轴的数据*/
 	int x_ILF = 0,y_ILF = 0;
+  /*数据转移*/
+  CV->Input_x = Input_x;
+  CV->Input_y = Input_y;
 
   Filter_IIRLPFInt(&Input_x,&x_ILF,0.6);
   Filter_IIRLPFInt(&Input_y,&y_ILF,0.4);
-
-	Output_x = x_ILF-320;
-	Output_y = y_ILF-240;
+	
+	CV->LPF_x = x_ILF;
+	CV->LPF_y = y_ILF;
+	
+	CV->Output_x = x_ILF-320;
+	CV->Output_y = y_ILF-240;
 }

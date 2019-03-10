@@ -81,23 +81,22 @@ void IMU_getinfo(uint8_t* buff, uint16_t dataLength, IMU_t* dataOut)
           dataOut->devStatus = buff[n+16];
 
           /*计算总角度（防止一开始的过零问题）*/
-          dataOut->totalYaw = dataOut->eular.yaw + (360.0f * dataOut->turnCount);
-
-
           if(dataOut->eular.yaw - dataOut->lastYaw < -300)
-          {
-					  dataOut->turnCount++;
-				  }
-
-          if(dataOut->lastYaw - dataOut->eular.yaw < -300)
-          {
-					  dataOut->turnCount--;
-				  }
-
-          dataOut->lastYaw =  dataOut->eular.yaw;
-
-          dataOut->UpdateFrame++;
-				  dataOut->UpdateFlag = 1;
+					{
+						dataOut->turnCount++;
+					}
+					
+					if(dataOut->lastYaw - dataOut->eular.yaw < -300)
+					{
+						dataOut->turnCount--;
+					}
+					
+					dataOut->lastYaw =  dataOut->eular.yaw;
+					
+					dataOut->totalYaw = dataOut->eular.yaw + (360.0f * dataOut->turnCount);
+					
+					dataOut->UpdateFrame++;
+					dataOut->UpdateFlag = 1;
 				
 				  return;
 

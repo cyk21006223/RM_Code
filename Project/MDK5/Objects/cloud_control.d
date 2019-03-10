@@ -69,3 +69,4 @@
 .\objects\cloud_control.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\cloud_control.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 .\objects\cloud_control.o: ..\..\Devices\IMU.h
+.\objects\cloud_control.o: ..\..\Devices\Aiming_Control.h

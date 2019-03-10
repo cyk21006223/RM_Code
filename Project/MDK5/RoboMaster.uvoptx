@@ -380,27 +380,42 @@
         <Ww>
           <count>6</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Output_x,0x0A</ItemText>
+          <ItemText>Cloud_IMU,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>7</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Output_y,0x0A</ItemText>
+          <ItemText>Cloud,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>8</count>
           <WinNumber>1</WinNumber>
-          <ItemText>N_state,0x0A</ItemText>
+          <ItemText>ControlVision,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>9</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Cloud_IMU,0x0A</ItemText>
+          <ItemText>usart2RxBuffer,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>10</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Cloud,0x0A</ItemText>
+          <ItemText>Cloud_delta_Yaw</ItemText>
+        </Ww>
+        <Ww>
+          <count>11</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>Cloud_delta_Pitch</ItemText>
+        </Ww>
+        <Ww>
+          <count>12</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>x_ILF,0x0A</ItemText>
+        </Ww>
+        <Ww>
+          <count>13</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>y_ILF,0x0A</ItemText>
         </Ww>
       </WatchWindow1>
       <Tracepoint>
@@ -616,8 +631,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\Devices\Aiming_Control.c</PathWithFileName>
-      <FilenameWithoutPath>Aiming_Control.c</FilenameWithoutPath>
+      <PathWithFileName>..\..\Devices\Cloud_Control.c</PathWithFileName>
+      <FilenameWithoutPath>Cloud_Control.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -628,8 +643,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\Devices\Chassis_Control.c</PathWithFileName>
-      <FilenameWithoutPath>Chassis_Control.c</FilenameWithoutPath>
+      <PathWithFileName>..\..\Devices\Aiming_Control.c</PathWithFileName>
+      <FilenameWithoutPath>Aiming_Control.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -640,8 +655,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\Devices\Cloud_Control.c</PathWithFileName>
-      <FilenameWithoutPath>Cloud_Control.c</FilenameWithoutPath>
+      <PathWithFileName>..\..\Devices\Chassis_Control.c</PathWithFileName>
+      <FilenameWithoutPath>Chassis_Control.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
